@@ -1,0 +1,30 @@
+﻿@model MyEShop.Models.Users
+@{
+    ViewData["Title"] = "Reg";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+       <h1>Зарегестрироваться</h1>
+        <p>
+            <span>Уже есть аккаунт?</span>
+            <a href=@Url.Action("Vhod")>Войти</a>
+        </p>
+        <form method="post" asp-antiforgery="true" asp-action="Reg" asp-controller="Home">
+                <fieldset>
+                    <label asp-for="Email">Почта</label>
+                    <input type="text" name="email" placeholder="user@gmail.ru" required>
+                    <span asp-validation-for="Email" ></span>
+                    <label asp-for="Password">Пароль</label>
+                    <input type="password" name="password" placeholder="Пароль должен состоять от 6 до 15 символов" required>
+                    <span asp-validation-for="Password"></span>
+                </fieldset>
+            <button class="btn" type="submit"> Зарегестрироваться</button>
+        </form>
+</div>
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+

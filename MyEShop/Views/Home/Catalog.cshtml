@@ -1,0 +1,106 @@
+﻿@model IEnumerable<MyEShop.Models.Products>
+@{
+    ViewData["Title"] = "Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main>
+    <div class="container">
+        <ul class="tags">
+            <li class="tag-item">Аптека</li>
+            <li class="tag-item tag-active">Собакам</li>
+            <li class="tag-item">Кошкам</li>
+            <li class="tag-item">Птицам</li>
+            <li class="tag-item">Грызунам</li>
+            <li class="tag-item">Аквариумистика</li>
+        </ul>
+        <div class="main">
+            <aside>
+                <form class="filterAdd hidden">
+                    <button class="btn add">Применить</button>
+                    <button class="plus close">×</button>
+                </form>
+                <form action="#">
+                    <fieldset>
+                        <legend>Товар</legend>
+                        <label><input type="checkbox" name="korma">Корма</label>
+                        <label><input type="checkbox" name="miski">Миски</label>
+                        <label><input type="checkbox" name="toys" checked>Игрушки</label>
+                        <label><input type="checkbox" name="amynitsia">Амуниция</label>
+                        <label><input type="checkbox" name="toilet">Пеленки и туалеты</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Цена</legend>
+                        <label>от<input type="number" name="ot"></label>
+                        <label>до<input type="number" name="do"></label>
+                        <label id="range">500<input type="range" name="cost-range" min="0">4300</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Бренд</legend>
+                        <label><input type="checkbox" name="allax">Allax (1)</label>
+                        <label><input type="checkbox" name="myaso">Myaso (2)</label>
+                        <label><input type="checkbox" name="sirius" checked>Sirius (46)</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Размер собаки</legend>
+                        <label><input type="checkbox" name="small">Маленькие (120)</label>
+                        <label><input type="checkbox" name="middle" checked>Средние (23)</label>
+                        <label><input type="checkbox" name="big">Крупные (46)</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Возраст</legend>
+                        <label><input type="checkbox" name="puppies">Щенки (до 1 года) (120)</label>
+                        <label><input type="checkbox" name="adults" checked>Взрослые (1-6 лет) (23)</label>
+                        <label><input type="checkbox" name="aged">Пожилые (старше 7 лет) (46)</label>
+                    </fieldset>
+                </form>
+            </aside>
+            <div class="cat">
+                <div class="filters">
+                    <div class="filter-item">
+                        <p class="filter-text">По цене</p>
+                        <button class="filter-btn arrow-up">
+                            <img src="~/icons/arrow.svg" />
+                        </button>
+                    </div>
+                    <div class="filter-item">
+                        <p class="filter-text"> По популярности</p>
+                        <button class="filter-btn arrow-down">
+                            <img src="~/icons/arrow.svg" />
+                        </button>
+                    </div>
+                    <div class="filter-item">
+                        <p class="filter-text">По рейтингу</p>
+                        <button class="filter-btn arrow-down">
+                            <img src="~/icons/arrow.svg" />
+                        </button>
+                    </div>
+                </div>
+                <div class="cards">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="cards-column">
+                            <div class="cards-item">
+                                <div class="image">
+                                    <img src=@item.Tree_Picture alt=@item.Title>
+                                </div>
+                                <p class="text">@item.Title</p>
+                                <p class="cost">@item.Price</p>
+                                <div class="quentity">
+                                    <button class="minus">-</button>
+                                    <p class="quentity-value">1</p>
+                                    <button class="plus tovar-plus">+</button>
+                                </div>
+                                <a href="/Cart/AddToCart?ID=@item.ID_Product" class="btn tovar-add" >В корзину</a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                </div>
+            </div>
+        <button class="goUp hidden">
+            <img src="~/icons/Наверх.svg" />
+        </button>
+    </div>
+</main>
+

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+        
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link type="text/css" href="~/css/catalog.css" rel="stylesheet" />
+    <link type="text/css" href="~/css/index.css" rel="stylesheet" />
+    <link type="text/css" href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="container">
+                <div class="menu">
+                    <div class="logo"><a href=@Url.Action("Index", "Home")><img src="~/icons/300магазин.svg" alt="" /></a></div>
+                    <div class="search">
+                        <input type="search" name="poisk" placeholder="Поиск">
+                        <button type="submit" class="lupa"><img src="~/icons/search.svg" /></button>
+                    </div>
+                    <div class="call-section">
+                        <h3 class="call-number">8 (955) 772-43-07</h3>
+                        <p class="call-text">Заказать звонок</p>
+                    </div>
+                    <div class="header-icons">
+                        <ul class="user-manage hidden">
+                            <li><a href=@Url.Action("Vhod", "Home")>Вход</a></li>
+                            <li><a href=@Url.Action("Reg", "Home")>Регистрация</a></li>
+                            <li><a href=@Url.Action("PersonalArea", "Home")>Личный кабинет</a></li>
+                        </ul>
+                        <div class="user">
+                            <a href=@Url.Action("PersonalArea", "Home")><img src="~/icons/user.svg" /></a>
+                        </div>
+                        <div class="bag">
+                            <button class="plus hidden"><span class="tovar-number"></span></button>
+                            <a href=@Url.Action("Index", "Cart")>
+                                <img src="~/icons/bag.svg" />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ul class="header-list">
+                        <li class="header-link link-active"><a href=@Url.Action("Index", "Home")>Главная</a></li>
+                        <li class="header-link"><a href=@Url.Action("Catalog", "Home")>Каталог</a></li>
+                        <li class="header-link"><a href=@Url.Action("Contacts", "Home")>Контакты</a></li>
+                        <li class="header-link"><a href=@Url.Action("Delivery", "Home")>Доставка</a></li>
+                        <li class="header-link"><a href=@Url.Action("PickUpPoints", "Home")>Пункты выдачи</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        <footer>
+            <div class="container">
+                <div class="footer-row">
+                    <div class="footer-column">
+                        <h3>Навигация</h3>
+                        <ul class="footer-list">
+                            <li class="footer-link"><a href=@Url.Action("Index", "Home")>Главная</a></li>
+                            <li class="footer-link"><a href=@Url.Action("Catalog", "Home")>Каталог</a></li>
+                            <li class="footer-link"><a href=@Url.Action("Contacts", "Home")>Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Покупателям</h3>
+                        <ul class="footer-list">
+                            <li class="footer-link"><a href=@Url.Action("PickUpPoints", "Home")>Пункты выдачи</a></li>
+                            <li class="footer-link"><a href=@Url.Action("Delivery", "Home")>Доставка</a></li>
+                            <li class="footer-link"><a href=@Url.Action("Index", "Cart")>Корзина</a></li>
+                            <li class="footer-link"><a href=@Url.Action("PersonalArea", "Home")>Личный кабинет</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Каталог</h3>
+                        <ul class="footer-list">
+                            <li class="footer-link"><a href="#">Аптека</a></li>
+                            <li class="footer-link"><a href="#">Собакам</a></li>
+                            <li class="footer-link"><a href="#">Кошкам</a></li>
+                            <li class="footer-link"><a href="#">Грызунам</a></li>
+                            <li class="footer-link"><a href="#">Аквариумистика</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Контакты</h3>
+                        <ul class="footer-list">
+                            <li class="footer-link">
+                                <div class="work-contact">
+                                    <p>Трудоустройство</p>
+                                    <p>8(495)-256-30-33</p>
+                                </div>
+                            </li>
+                            <li class="footer-link"><a href="#">300.magazin@gmail.com</a></li>
+                            <li class="footer-link">
+                                <div class="social-media-contact">
+                                    <div class="inst"><a href="#"><img src="~/icons/instagram-w.svg" /></a></div>
+                                    <div class="wa"><a href="#"><img src="~/icons/whatsapp-w.svg" /></a></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="footer-text">
+                    Артём Гуськов, 2020
+                </p>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

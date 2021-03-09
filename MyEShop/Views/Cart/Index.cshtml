@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.CartLines.Count == 0)
+{
+    <p>Товаров в корзине нет</p> <a href="/">Назад к товарам</a>
+}
+else
+{
+    @for (int i = 0; i < Model.CartLines.Count; i++)
+    {
+        <li>
+            @Model.CartLines[i].Title - @Model.CartLines[i].Price <a href="/Cart/RemoveFromCart?Number=@i"> Убрать из корзины </a>
+        </li>
+    }
+}
+

@@ -1,0 +1,34 @@
+﻿@model MyEShop.Models.LogModel
+@{
+    ViewData["Title"] = "Vhod";
+    <title>@ViewBag.Title</title>
+    <link type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link type="text/css" href="~/css/catalog.css" rel="stylesheet" />
+    <link type="text/css" href="~/css/index.css" rel="stylesheet" />
+    <link type="text/css" href="~/css/style.css" rel="stylesheet" />
+}
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Войти</h1>
+            <p>
+                <span>Впервые здесь?</span>
+                <a href=@Url.Action("Reg")>Зарегестрироваться</a>
+            </p>
+            <form method="post" asp-action="Vhod" asp-controller="Home" asp-antiforgery="true">
+                <label asp-for="Email">Email</label>
+                <input type="text" name="email" placeholder="Email" required>
+                <span asp-validation-for="Email"></span>
+                <label asp-for="Password">Пароль</label>
+                <input type="password" name="password" required>
+                <span asp-validation-for="Password"></span>
+                <a href="#">Забыли пароль?</a>
+                <button class="btn" type="submit"> Войти </button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+</body>

@@ -1,0 +1,12 @@
+section p, section h2 {
+	margin: 20px 0px;
+}
+section {
+	margin: 52px 0px 72px 170px;
+}
+footer {
+	margin: 100px 0px 0px 0px;
+}
+.cost, span {
+	color:  #A21CFF;
+}
