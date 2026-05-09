@@ -22,7 +22,7 @@ namespace MyEShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = "Server=DESKTOP-9637ANL\\ARTEM;Database=Shop_Database;Trusted_Connection=True;";
+            string connection = "Server=_;Database=Shop_Database;Trusted_Connection=True;";
             services.AddDbContext<ApplicationContext>(op => op.UseSqlServer(connection));
             services.AddTransient<ArticlesRepository>();
             services.AddMvc();
