@@ -2,10 +2,6 @@
 
 A full-stack e-commerce web application for a pet supplies store, built with **ASP.NET Core MVC** and **Entity Framework Core**. Features user authentication, a product catalog, and a session-based shopping cart.
 
-## 📸 Screenshots
-
-> _Add screenshots of the app here_
-
 ## ✨ Features
 
 - 🔐 **User Registration & Login** — cookie-based authentication with form validation
@@ -93,19 +89,6 @@ MyEShop/
 **Shopping Cart** is stored in the server-side session as a serialized JSON object. Items can be added from the catalog and removed from the cart view, with the total price calculated automatically.
 
 **Database** uses Entity Framework Core's code-first approach — models are defined in C# and EF Core handles schema creation.
-
-## 🔮 Roadmap
-
-- [ ] Password hashing (bcrypt / ASP.NET Identity)
-- [ ] Product categories and filtering
-- [ ] Order placement and order history
-- [ ] Admin panel for product management
-- [ ] Quantity selection in the cart
-- [ ] Search functionality
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
